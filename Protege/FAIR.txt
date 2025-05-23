@@ -1,0 +1,39 @@
+FAIR Principles
+
+Saves your effort.
+Extend the existing work, don't create from scratch.
+Start from the stage at which it was left.
+Leave your work with proper meta data.
+ONtoSoft
+Each release must be competible to environment.
+Meta data must be registered.Meta data is like readme file.
+Research softwares must be available in working form.
+Provide executable link to download software.
+Standardize with current web version.
+Zenado: Takes your mata data interfaces/snapshots.
+
+Interoperability
+Interoperate the code with other components.
+APIs, PlugIns.
+Rapid software development.
+
+Reusability
+Atrributes in software: Input parameters, output, Environment.
+Licences.
+How to use.
+
+FAIR For software
+Apply 3,4 FAIR rules on your own project, from the given table.
+
+IEDB FAIR Principle
+Medical databse, immune disease.
+Identified the database meta data in table.
+....................................................................................................
+
+FAIR can be applied to any field/domain.
+How to make a website FAIR.
+
+
+
+
+

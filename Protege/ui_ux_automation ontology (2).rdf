@@ -1,0 +1,2787 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation/"
+     xml:base="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ui_ux_automation="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation/1.0"/>
+        <rdfs:comment>This is the Ontology of UI/UX</rdfs:comment>
+        <rdfs:label>ui_ux_automation using LLM</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FeedbackFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FeedbackFor">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasFeedback"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsedOnPlatform -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsedOnPlatform">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UIComponent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DevicePlatform"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#appliesToContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#appliesToContext">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#requireDesignPrinciple"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignPrinciple"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Context"/>
+        <rdfs:comment>link design principle to specific context</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#appliesToEnvironment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#appliesToEnvironment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WCAGComplianceMetric"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EnvironmentalContext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ensuresComplianceWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ensuresComplianceWith">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#isEnsuredByPrinciple"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ConsistencyPrinciple"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WCAGComplianceMetric"/>
+        <rdfs:comment>Links a design principle to the accessibility metric it satisfies</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#evaluatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#evaluatedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#evaluates"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Persona"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UIComponent"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EvaluationMetric"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#evaluates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#evaluates">
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Persona"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UIComponent"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#feedbackPreferredByPersona -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#feedbackPreferredByPersona">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#preferredFeedback"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasBenchmark -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasBenchmark">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#isBenchmarkFor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DevicePlatform"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EvaluationMetric"/>
+        <rdfs:comment>Device Platform To Evaluation Metric</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasDesktopTimeOnTaskBenchmark -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasDesktopTimeOnTaskBenchmark">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasBenchmark"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesktopDevice"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TimeOnTaskMetric"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasEvaluationConstraint -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasEvaluationConstraint">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#evaluatedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasFeedback -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasFeedback">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UIComponent"/>
+        <rdfs:range rdf:resource="http://schema.org/Feedback"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasFidelityLevel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasFidelityLevel">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#isFidelityOfPrototype"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Prototype"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FidelityLevel"/>
+        <rdfs:comment>Links a prototype to its fidelity level</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasPhoneTimeOnTaskBenchmark -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasPhoneTimeOnTaskBenchmark">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasBenchmark"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PhoneDevice"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TimeOnTaskMetric"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#impactsMetric -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#impactsMetric">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignPrinciple"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EvaluationMetric"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#influencedByContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#influencedByContext">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Layout"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Context"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#informedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#informedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignArtifact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserResearch"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#investigatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#investigatedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#investigatesPersona"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Persona"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserResearch"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#investigatesPersona -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#investigatesPersona"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#isBenchmarkFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#isBenchmarkFor"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#isEnsuredByPrinciple -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#isEnsuredByPrinciple"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#isFidelityOfPrototype -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#isFidelityOfPrototype"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#isSuitableContextFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#isSuitableContextFor">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#suitableContextFor"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.org/Feedback"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UIComponent"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#preferredFeedback -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#preferredFeedback">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Persona"/>
+        <rdfs:range rdf:resource="http://schema.org/Feedback"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#requireDesignPrinciple -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#requireDesignPrinciple">
+        <rdfs:comment>Context that require Design Principle</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#requiresPrinciple -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#requiresPrinciple">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UIComponent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignPrinciple"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#suitableContextFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#suitableContextFor">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.org/Feedback"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UIComponent"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Context"/>
+        <rdfs:comment>Indicates that a UI component  TextInputComponent optimized for use in a specific cultural context (RTL languages).</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#suitableFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#suitableFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Layout"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DevicePlatform"/>
+        <rdfs:comment>used to connect layout with device platform</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#desktopLoginTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#desktopLoginTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasValueInSecond"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasAccessibleLabel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasAccessibleLabel"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasAccuracyRating -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasAccuracyRating">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserResearch"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasCalendarSystem -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasCalendarSystem">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CulturalContext"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasColorContrast -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasColorContrast">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WCAGComplianceMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasComplianceLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasComplianceLevel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WCAGComplianceMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasLanguageInputDirection -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasLanguageInputDirection">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CulturalContext"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the text directionality of a cultural context</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasMinimumSizeRequirement -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasMinimumSizeRequirement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractiveComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasResponseTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasResponseTime">
+        <rdfs:domain rdf:resource="http://schema.org/Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasSearchFunctionality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasSearchFunctionality">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DropdownComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether a selection component includes a search feature to filter options.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasThresholdValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasThresholdValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TimeOnTaskMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasValueInSecond -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasValueInSecond">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TimeOnTaskMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasVisualImpairment -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasVisualImpairment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserPersona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#maintainConsistencyIn -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#maintainConsistencyIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Layout"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#maxOptionsAllowed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#maxOptionsAllowed">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DropdownComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Specifies the maximum number of options a selection component can display before requiring search functionality.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#phoneLoginTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#phoneLoginTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasValueInSecond"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#requiresLowAttention -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#requiresLowAttention">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EnvironmentalContext"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Data property marking low-attention contexts.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#supportOrientation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#supportOrientation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Layout"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#supportsCalendarSystem -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#supportsCalendarSystem">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DateTimeInputComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/Feedback -->
+
+    <owl:Class rdf:about="http://schema.org/Feedback">
+        <rdfs:comment>Methods and systems through which a user interface communicates the results of user actions, system states, or important information to users</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/UserInteraction -->
+
+    <owl:Class rdf:about="http://schema.org/UserInteraction">
+        <rdfs:comment>The actions, behaviors, and engagement patterns through which users communicate with and control digital interfaces and systems</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ABTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ABTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ExperimentalResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityMetric">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EvaluationMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityPrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityPrinciple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignPrinciple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ActionCard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ActionCard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CardComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ActionComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ActionComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractiveComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AlertComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AlertComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StatusComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AnalyticsResearch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AnalyticsResearch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#QuantitativeResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AntiPersona -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AntiPersona">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Persona"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserPersona"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AppAnalytics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AppAnalytics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AnalyticsResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AttitudeSurvey -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AttitudeSurvey">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SurveyResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AudioClarityMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AudioClarityMetric">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AudioComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AudioComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#MediaComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AudioPlayer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AudioPlayer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AudioComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AuditoryFeedback -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AuditoryFeedback">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Feedback"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BackgroundVideo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BackgroundVideo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VideoComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BadgeComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BadgeComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StatusComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BalancePrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BalancePrinciple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisibilityPrinciple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BarChart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BarChart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ChartComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BaselineBenchmark -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BaselineBenchmark">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BenchmarkStudy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BasicCard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BasicCard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CardComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BehavioralSurvey -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BehavioralSurvey">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SurveyResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BenchmarkStudy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BenchmarkStudy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#QuantitativeResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BreadcrumbComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BreadcrumbComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#NavigationComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ButtonComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ButtonComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ActionComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CaptionAccuracyMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CaptionAccuracyMetric">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CardComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CardComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DataDisplayComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CardSortingTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CardSortingTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserPreferenceTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ChartComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ChartComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DataDisplayComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CircularProgress -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CircularProgress">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ProgressComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ColorContrastRatioMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ColorContrastRatioMetric">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ColorSystemDesign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ColorSystemDesign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualDesign"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ComboboxComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ComboboxComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SelectionComponent"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DropdownComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CompetitiveBenchmark -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CompetitiveBenchmark">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BenchmarkStudy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ConceptTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ConceptTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ExperimentalResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ConsistencyPrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ConsistencyPrinciple">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignPrinciple"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#appliesToContext"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TaskContext"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A design principle requiring uniform UI behavior</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ContentModeling -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ContentModeling">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InformationArchitecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Context -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Context">
+        <rdfs:comment>The environment, circumstances, or conditions in which user interaction occurs, influencing design decisions and user experience</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ContrastPrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ContrastPrinciple">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisibilityPrinciple"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#appliesToContext"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EnvironmentalContext"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ConversionMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ConversionMetric">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EngagementMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CountBadge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CountBadge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BadgeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CulturalContext -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CulturalContext">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Context"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasLanguageInputDirection"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DataDisplayComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DataDisplayComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DisplayComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DateTimeInputComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DateTimeInputComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InputComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DemographicSurvey -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DemographicSurvey">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SurveyResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DescriptionList -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DescriptionList">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ListComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignArtifact -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignArtifact">
+        <rdfs:comment>Tangible or digital deliverables produced during the design process that document, communicate, or represent design decisions and solutions</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignPrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignPrinciple">
+        <rdfs:comment>Fundamental guidelines and rules that inform design decisions to create effective, consistent, and user-friendly digital products and experiences</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignProcess">
+        <rdfs:comment>A systematic series of steps and methodologies used to develop user interfaces and experiences, from conceptualization to implementation</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesirabilityTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesirabilityTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ConceptTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesktopDevice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesktopDevice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DevicePlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DevicePlatform -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DevicePlatform">
+        <rdfs:comment>he hardware and operating system environment on which a digital product is accessed and used by end users</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DisplayComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DisplayComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UIComponent"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractiveComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DropdownComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DropdownComponent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SelectionComponent"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#maxOptionsAllowed"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</xsd:minExclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasSearchFunctionality"/>
+                                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A type of selection component displaying options in a collapsible list.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EffectivenessMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EffectivenessMetric">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EfficiencyMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EfficiencyMetric">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EfficiencyPrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EfficiencyPrinciple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityPrinciple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EmbeddedVideo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EmbeddedVideo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VideoComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EmphasisPrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EmphasisPrinciple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisibilityPrinciple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EngagementMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EngagementMetric">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EvaluationMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EnvironmentalContext -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EnvironmentalContext">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Context"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ErrorAlert -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ErrorAlert">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AlertComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EvaluationMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EvaluationMetric">
+        <rdfs:comment>measures used to assess the performance, effectiveness, and quality of user interfaces and experiences</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ExpandableCard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ExpandableCard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CardComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ExperimentalResearch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ExperimentalResearch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FeedbackMechanismDesign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FeedbackMechanismDesign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractionDesign"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FidelityLevel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FidelityLevel">
+        <rdfs:comment>&quot;The degree of detail and functionality in a prototype</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FileInputComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FileInputComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InputComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FilterableTable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FilterableTable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TableComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FirstClickTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FirstClickTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ConceptTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FiveSecondTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FiveSecondTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ConceptTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FlexLayout -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FlexLayout">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Layout"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#suitableFor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PhoneDevice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#GridLayout -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#GridLayout">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Layout"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#HeatmapAnalysis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#HeatmapAnalysis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AnalyticsResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ImageComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ImageComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#MediaComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InfoAlert -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InfoAlert">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AlertComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InformationArchitecture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InformationArchitecture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InformationArchitectureDiagram -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InformationArchitectureDiagram">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StructuralArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InlineList -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InlineList">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ListComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InputComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InputComponent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InputComponent"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#suitableContextFor"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CulturalContext"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasLanguageInputDirection"/>
+                                        <owl:hasValue>RTL</owl:hasValue>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractiveComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractionDesign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractionDesign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractionMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractionMetric">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EngagementMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractiveComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractiveComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UIComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractiveVideo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractiveVideo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VideoComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InterviewResearch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InterviewResearch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#QualitativeResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LabelingDesign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LabelingDesign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InformationArchitecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Layout -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Layout">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#suitableFor"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DevicePlatform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A structured approach for organizing and arranging visual elements on a screen or page to create coherent and usable interfaces</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LayoutDesign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LayoutDesign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualDesign"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LazyLoadedImage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LazyLoadedImage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ImageComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LearnabilityMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LearnabilityMetric">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LearnabilityPrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LearnabilityPrinciple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityPrinciple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LineChart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LineChart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ChartComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LinearProgress -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LinearProgress">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ProgressComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LinkComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LinkComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ActionComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ListComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ListComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DataDisplayComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LongitudinalBenchmark -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LongitudinalBenchmark">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BenchmarkStudy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#MediaCard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#MediaCard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CardComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#MediaComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#MediaComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DisplayComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#MenuComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#MenuComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#NavigationComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#MicrointeractionDesign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#MicrointeractionDesign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractionDesign"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#MultivariateTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#MultivariateTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ABTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#NavigationComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#NavigationComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractiveComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#NavigationDesign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#NavigationDesign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InformationArchitecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#NotificationBadge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#NotificationBadge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BadgeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#NoviceUserPersona -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#NoviceUserPersona">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserPersona"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PowerUserPersona"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ObservationalResearch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ObservationalResearch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#QualitativeResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#OperablePrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#OperablePrinciple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityPrinciple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#OrderedList -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#OrderedList">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ListComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PaginatedTable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PaginatedTable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TableComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PaginationComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PaginationComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#NavigationComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PerceivablePrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PerceivablePrinciple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityPrinciple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Persona -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Persona">
+        <rdfs:comment>A fictional character created to represent different user types that might use a product, service, or website in a similar way</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PhoneDevice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PhoneDevice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DevicePlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PieChart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PieChart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ChartComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PowerUserPersona -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PowerUserPersona">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserPersona"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PreferenceRankingTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PreferenceRankingTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserPreferenceTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ProgressComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ProgressComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StatusComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Prototype -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Prototype">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualArtifact"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasFidelityLevel"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FidelityLevel"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A representation of a UI/UX design at a specific stage of development</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#QualitativeResearch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#QualitativeResearch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#QuantitativeResearch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#QuantitativeResearch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#RangeInputComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#RangeInputComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InputComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ResponsiveImage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ResponsiveImage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ImageComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ResponsivePrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ResponsivePrinciple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignPrinciple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#RhythmPrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#RhythmPrinciple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisibilityPrinciple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#RobustPrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#RobustPrinciple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityPrinciple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SatisfactionMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SatisfactionMetric">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SatisfactionPrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SatisfactionPrinciple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityPrinciple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ScatterChart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ScatterChart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ChartComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SelectionComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SelectionComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractiveComponent"/>
+        <rdfs:comment>A UI component allowing users to select from a list of options</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SelectionInputComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SelectionInputComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InputComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SequentialABTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SequentialABTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ABTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SimpleABTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SimpleABTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ABTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Sitemap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Sitemap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StructuralArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SocialContext -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SocialContext">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Context"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SortableTable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SortableTable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TableComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SoundEffect -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SoundEffect">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AudioComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StackLayout -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StackLayout">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Layout"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#suitableFor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PhoneDevice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StaticImage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StaticImage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ImageComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StaticTable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StaticTable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TableComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StatusBadge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StatusBadge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BadgeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StatusComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StatusComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DisplayComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StepProgress -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StepProgress">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ProgressComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StructuralArtifact -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StructuralArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignArtifact"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SuccessAlert -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SuccessAlert">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AlertComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SurveyResearch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SurveyResearch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#QuantitativeResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TabComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TabComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#NavigationComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TableComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TableComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DataDisplayComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TactileFeedback -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TactileFeedback">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Feedback"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TaskContext -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TaskContext">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Context"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TaskFlowDesign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TaskFlowDesign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractionDesign"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TaxonomyDesign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TaxonomyDesign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InformationArchitecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TemporalContext -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TemporalContext">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Context"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#isSuitableContextFor"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasResponseTime"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TextInputComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TextInputComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InputComponent"/>
+        <rdfs:comment>A UI component designed for textual data entry, including single-line or multi-line input fields.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TextReadabilityMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TextReadabilityMetric">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TimeOnTaskMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TimeOnTaskMetric">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EfficiencyMetric"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#desktopLoginTime"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#phoneLoginTime"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ToggleSwitchComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ToggleSwitchComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ActionComponent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#requiresPrinciple"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityPrinciple"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TreeTesting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TreeTesting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserPreferenceTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TypographyDesign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TypographyDesign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualDesign"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UIComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UIComponent">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasFeedback"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TactileFeedback"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#suitableContextFor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Context"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Reusable, self-contained interface elements that serve specific functions within a digital product, forming the building blocks of the overall user interface</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UnderstandablePrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UnderstandablePrinciple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityPrinciple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UnityPrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UnityPrinciple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisibilityPrinciple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UnorderedList -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UnorderedList">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ListComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityMetric">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EvaluationMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityPrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityPrinciple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignPrinciple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityStudy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityStudy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#QualitativeResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserFlowDiagram -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserFlowDiagram">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StructuralArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserPersona -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserPersona">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Persona"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#investigatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InterviewResearch"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#investigatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ObservationalResearch"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#investigatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityStudy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#preferredFeedback"/>
+                <owl:someValuesFrom rdf:resource="http://schema.org/Feedback"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>userpersona</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserPreferenceTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserPreferenceTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ExperimentalResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserResearch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserResearch">
+        <rdfs:comment>Systematic investigation of user behaviors, needs, motivations, and preferences to inform and validate design decisions throughout the product development process</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserRetentionMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserRetentionMetric">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EngagementMetric"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VideoComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VideoComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#MediaComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisibilityPrinciple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisibilityPrinciple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignPrinciple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualArtifact -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualDesign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualDesign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualFeedback -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualFeedback">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Feedback"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VoiceRecording -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VoiceRecording">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AudioComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WCAGComplianceMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WCAGComplianceMetric">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityMetric"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#hasColorContrast"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>An evaluation metric measuring conformance to WCAG accessibility standards</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WarningAlert -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WarningAlert">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AlertComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WearableDevice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WearableDevice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DevicePlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WebAnalytics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WebAnalytics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AnalyticsResearch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Wireframe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Wireframe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#schema:UserComment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#schema:UserComment">
+        <rdfs:subClassOf rdf:resource="http://schema.org/UserInteraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#schema:UserDownload -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#schema:UserDownload">
+        <rdfs:subClassOf rdf:resource="http://schema.org/UserInteraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#schema:UserLike -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#schema:UserLike">
+        <rdfs:subClassOf rdf:resource="http://schema.org/UserInteraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#schema:UserPageVisit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#schema:UserPageVisit">
+        <rdfs:subClassOf rdf:resource="http://schema.org/UserInteraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#schema:UserPlay -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#schema:UserPlay">
+        <rdfs:subClassOf rdf:resource="http://schema.org/UserInteraction"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ArabicContext -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ArabicContext">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CulturalContext"/>
+        <ui_ux_automation:hasLanguageInputDirection>RTL</ui_ux_automation:hasLanguageInputDirection>
+        <rdfs:comment>A cultural context representing Arabic language constraints, including right-to-left (RTL) text directionality.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AuditoryFeedback1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AuditoryFeedback1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AuditoryFeedback"/>
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AuditoryFeedback2"/>
+        <ui_ux_automation:suitableContextFor rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TemporalContext1"/>
+        <ui_ux_automation:hasResponseTime rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</ui_ux_automation:hasResponseTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AuditoryFeedback2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AuditoryFeedback2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AuditoryFeedback"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ButtonComponent1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ButtonComponent1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ButtonComponent"/>
+        <ui_ux_automation:UsedOnPlatform rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WearableDevice1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ConsistencyPrinciple1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ConsistencyPrinciple1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ConsistencyPrinciple"/>
+        <ui_ux_automation:appliesToContext rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CrossPlatformEnterpriseContext"/>
+        <rdfs:comment>Cross-Platform UI Consistency Principle</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ConsistencyPrinciple2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ConsistencyPrinciple2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ConsistencyPrinciple"/>
+        <ui_ux_automation:ensuresComplianceWith rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WCAG_AAA_Level"/>
+        <rdfs:comment>consistency Principle that maintain brand consistency</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ContrastPrinciple1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ContrastPrinciple1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ContrastPrinciple"/>
+        <ui_ux_automation:appliesToContext rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EnvironmentalContext1"/>
+        <rdfs:comment>Instance of ContrastPrinciple applied in the specified context</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CountryDropDown -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CountryDropDown">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DropdownComponent"/>
+        <ui_ux_automation:hasSearchFunctionality rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ui_ux_automation:hasSearchFunctionality>
+        <ui_ux_automation:maxOptionsAllowed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</ui_ux_automation:maxOptionsAllowed>
+        <rdfs:comment>A dropdown component for selecting countries, optimized for usability with &gt;20 options and built-in search.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CrossPlatformEnterpriseContext -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CrossPlatformEnterpriseContext">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TaskContext"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DarkModeToggle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DarkModeToggle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ToggleSwitchComponent"/>
+        <ui_ux_automation:requiresPrinciple rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PerceivableAccessibilityPrinciple"/>
+        <ui_ux_automation:hasAccessibleLabel>aria-label=Dark Mode</ui_ux_automation:hasAccessibleLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DateTimePickerJapanese -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DateTimePickerJapanese">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DateTimeInputComponent"/>
+        <ui_ux_automation:suitableContextFor rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#JapaneseCultureContext"/>
+        <ui_ux_automation:supportsCalendarSystem>JapaneseEra</ui_ux_automation:supportsCalendarSystem>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesktopDevice1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesktopDevice1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesktopDevice"/>
+        <ui_ux_automation:hasDesktopTimeOnTaskBenchmark rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TimeOnTaskMetric2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ElderlyLowTechUser -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ElderlyLowTechUser">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserPersona"/>
+        <rdfs:comment>Elderly users with low technology literacy</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EnvironmentalContext1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EnvironmentalContext1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EnvironmentalContext"/>
+        <ui_ux_automation:requiresLowAttention rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ui_ux_automation:requiresLowAttention>
+        <rdfs:comment>Instance of EnvironmentalContext requiring low user attention.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FlexLayout1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FlexLayout1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FlexLayout"/>
+        <ui_ux_automation:influencedByContext rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VehicleContext"/>
+        <ui_ux_automation:maintainConsistencyIn rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ui_ux_automation:maintainConsistencyIn>
+        <ui_ux_automation:supportOrientation>Portrat , Landscape</ui_ux_automation:supportOrientation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FlexLayout2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FlexLayout2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FlexLayout"/>
+        <ui_ux_automation:suitableFor rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PhoneDevice2"/>
+        <rdfs:comment>A flexible layout  for dynamic mobile interface</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#GridLayout1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#GridLayout1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#GridLayout"/>
+        <ui_ux_automation:influencedByContext rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VehicleContext"/>
+        <ui_ux_automation:maintainConsistencyIn rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ui_ux_automation:maintainConsistencyIn>
+        <ui_ux_automation:supportOrientation>Potrait</ui_ux_automation:supportOrientation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#HighFidelity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#HighFidelity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FidelityLevel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#HighStressOutdoorContext -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#HighStressOutdoorContext">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EnvironmentalContext"/>
+        <rdfs:comment>Interfaces used in high-stress outdoor environments</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InterviewStudy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InterviewStudy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InterviewResearch"/>
+        <ui_ux_automation:investigatesPersona rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ElderlyLowTechUser"/>
+        <ui_ux_automation:hasAccuracyRating rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ui_ux_automation:hasAccuracyRating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#JapaneseCultureContext -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#JapaneseCultureContext">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CulturalContext"/>
+        <ui_ux_automation:hasCalendarSystem>JapaneseEra</ui_ux_automation:hasCalendarSystem>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LowFidelity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LowFidelity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FidelityLevel"/>
+        <rdfs:comment>Basic wireframe with placeholder content and minimal interactivity</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#MediumFidelity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#MediumFidelity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FidelityLevel"/>
+        <rdfs:comment>Interactive prototype with styled components and partial functionality.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ObservationalStudy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ObservationalStudy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ObservationalResearch"/>
+        <ui_ux_automation:investigatesPersona rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ElderlyLowTechUser"/>
+        <ui_ux_automation:hasAccuracyRating rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ui_ux_automation:hasAccuracyRating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#OutdoorWCAGCompliance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#OutdoorWCAGCompliance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WCAGComplianceMetric"/>
+        <ui_ux_automation:appliesToEnvironment rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#HighStressOutdoorContext"/>
+        <ui_ux_automation:hasColorContrast>7:1</ui_ux_automation:hasColorContrast>
+        <rdfs:comment>WCAG compliance standards tailored for outdoor environments</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PerceivableAccessibilityPrinciple -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PerceivableAccessibilityPrinciple">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityPrinciple"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PersonaVisualImparedUser -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PersonaVisualImparedUser">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserPersona"/>
+        <ui_ux_automation:preferredFeedback rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AuditoryFeedback2"/>
+        <ui_ux_automation:preferredFeedback rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualFeedback2"/>
+        <ui_ux_automation:hasVisualImpairment rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ui_ux_automation:hasVisualImpairment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PhoneDevice1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PhoneDevice1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PhoneDevice"/>
+        <ui_ux_automation:hasPhoneTimeOnTaskBenchmark rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TimeOnTaskMetric2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PhoneDevice2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PhoneDevice2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PhoneDevice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PowerUser1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PowerUser1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PowerUserPersona"/>
+        <ui_ux_automation:evaluatedBy rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TimeOnTaskMetric1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PrototypeA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PrototypeA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Prototype"/>
+        <ui_ux_automation:hasFidelityLevel rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#HighFidelity"/>
+        <ui_ux_automation:hasFidelityLevel rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LowFidelity"/>
+        <ui_ux_automation:hasFidelityLevel rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#MediumFidelity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ScreenReaderAccessibilityMetric -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ScreenReaderAccessibilityMetric">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityMetric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SingleLineInputComponent -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SingleLineInputComponent">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TextInputComponent"/>
+        <ui_ux_automation:suitableContextFor rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ArabicContext"/>
+        <rdfs:comment>A text input component optimized for short, single-line text entry, compatible with RTL languages like Arabic.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StackLayout1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StackLayout1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StackLayout"/>
+        <ui_ux_automation:suitableFor rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PhoneDevice2"/>
+        <rdfs:comment>A vertical/horizontal stacking for mobile UI</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TemporalContext1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TemporalContext1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TemporalContext"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TimeOnTaskMetric1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TimeOnTaskMetric1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TimeOnTaskMetric"/>
+        <ui_ux_automation:hasThresholdValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</ui_ux_automation:hasThresholdValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TimeOnTaskMetric2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TimeOnTaskMetric2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TimeOnTaskMetric"/>
+        <ui_ux_automation:desktopLoginTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.2</ui_ux_automation:desktopLoginTime>
+        <ui_ux_automation:phoneLoginTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.2</ui_ux_automation:phoneLoginTime>
+        <rdfs:comment>TimeOnTaskMetric2  across different Device Platform</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityStudyElderly -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityStudyElderly">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityStudy"/>
+        <ui_ux_automation:investigatesPersona rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ElderlyLowTechUser"/>
+        <ui_ux_automation:hasAccuracyRating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6</ui_ux_automation:hasAccuracyRating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VehicleContext -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VehicleContext">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EnvironmentalContext"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualFeedback1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualFeedback1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualFeedback"/>
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualFeedback2"/>
+        <ui_ux_automation:suitableContextFor rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TemporalContext1"/>
+        <ui_ux_automation:hasResponseTime rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</ui_ux_automation:hasResponseTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualFeedback2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualFeedback2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualFeedback"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WCAG_AAA_Level -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WCAG_AAA_Level">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WCAGComplianceMetric"/>
+        <rdfs:comment>WCAG AAA Compliance Level for brand consistency</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WearableDevice1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WearableDevice1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WearableDevice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.org/Feedback"/>
+            <rdf:Description rdf:about="http://schema.org/UserInteraction"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Context"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignArtifact"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignPrinciple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesignProcess"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DevicePlatform"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EvaluationMetric"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Layout"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#Persona"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UIComponent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UserResearch"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityMetric"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EngagementMetric"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityMetric"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AccessibilityPrinciple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ConsistencyPrinciple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ResponsivePrinciple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityPrinciple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisibilityPrinciple"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ActionComponent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InputComponent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#NavigationComponent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SelectionComponent"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#AuditoryFeedback"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TactileFeedback"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualFeedback"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#BalancePrinciple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ContrastPrinciple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EmphasisPrinciple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#RhythmPrinciple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UnityPrinciple"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ButtonComponent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LinkComponent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ToggleSwitchComponent"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ContrastPrinciple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EmphasisPrinciple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#RhythmPrinciple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UnityPrinciple"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#CulturalContext"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EnvironmentalContext"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SocialContext"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TaskContext"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#TemporalContext"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#DesktopDevice"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PhoneDevice"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#WearableDevice"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#EfficiencyPrinciple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#LearnabilityPrinciple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#SatisfactionPrinciple"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ExperimentalResearch"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#QualitativeResearch"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#QuantitativeResearch"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#FlexLayout"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#GridLayout"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#StackLayout"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InformationArchitecture"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InteractionDesign"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#VisualDesign"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#InterviewResearch"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#ObservationalResearch"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UsabilityStudy"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#OperablePrinciple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#PerceivablePrinciple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#RobustPrinciple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#UnderstandablePrinciple"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#schema:UserComment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#schema:UserDownload"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#schema:UserLike"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#schema:UserPageVisit"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/asifcomputer/ontology/2025/ui_ux_automation#schema:UserPlay"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
